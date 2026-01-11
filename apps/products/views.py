@@ -9,7 +9,10 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from drf_spectacular.utils import extend_schema
 
-from apps.products.models import Product, Category, ProductReview
+from apps.products.models import Product, Category
+# ProductReview temporarily removed for migrations
+# from apps.products.models.review import ProductReview
+ProductReview = None  # Placeholder - remove after migrations
 from apps.products.serializers import (
     ProductSerializer,
     ProductListSerializer,
