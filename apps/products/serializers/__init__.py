@@ -11,16 +11,11 @@ from .product import (
     ProductUpdateSerializer,
     ProductVariantSerializer,
 )
-# Review serializers temporarily removed for migrations
-# from .review import (
-#     ReviewSerializer,
-#     ReviewCreateSerializer,
-#     ReviewListSerializer,
-# )
-# Placeholders - remove after migrations
-ReviewSerializer = None
-ReviewCreateSerializer = None
-ReviewListSerializer = None
+from .review import (
+    ReviewSerializer,
+    ReviewCreateSerializer,
+    ReviewListSerializer,
+)
 
 __all__ = [
     'CategorySerializer',
