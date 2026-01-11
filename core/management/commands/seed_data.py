@@ -224,8 +224,8 @@ class Command(BaseCommand):
                 user=user,
                 defaults={
                     **info,
-                    'gstin': f'29ABCDE{1234+i}F1Z{i}',
-                    'pan': f'ABCDE{1234+i}F',
+                    'tax_id': f'29ABCDE{1234+i}F1Z{i}',
+                    'registration_number': f'ABCDE{1234+i}F',
                     'bank_name': 'HDFC Bank',
                     'bank_account_number': f'1234567890{i}',
                     'bank_ifsc': 'HDFC0001234',
@@ -265,7 +265,7 @@ class Command(BaseCommand):
                         'city': 'Mumbai',
                         'state': 'Maharashtra',
                         'pincode': '400001',
-                        'gstin': f'29ABCDE{random.randint(1000, 9999)}F1Z5',
+                        'tax_id': f'29ABCDE{random.randint(1000, 9999)}F1Z5',
                         'status': 'active',
                     }
                 )
