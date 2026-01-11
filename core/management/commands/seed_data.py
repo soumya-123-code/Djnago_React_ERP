@@ -56,7 +56,8 @@ class Command(BaseCommand):
         """Clear all data from tables."""
         from apps.products.models import Product, Category, ProductVariant, ProductImage, ProductReview
         from apps.accounts.models import User, UserProfile, OTPRequest, ActivityLog
-        from apps.vendors.models import Vendor, Supplier, VendorStaff
+        from apps.vendors.models import Vendor, Supplier
+        from apps.vendors.models.vendor import VendorStaff
         from apps.customers.models import Customer, CustomerAddress, Cart, CartItem, Wishlist
         from apps.inventory.models import Inventory, InventoryLog
         from apps.warehouses.models import Warehouse, RackShelfLocation
