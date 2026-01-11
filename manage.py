@@ -3,6 +3,16 @@
 import os
 import sys
 
+# Auto-configure PyMySQL as MySQLdb if mysqlclient is not installed
+try:
+    import MySQLdb  # noqa: F401
+except ImportError:
+    try:
+        import pymysql
+        pymysql.install_as_MySQLdb()
+    except ImportError:
+        pass  # Will fail later with proper error message
+
 
 def main():
     """Run administrative tasks."""

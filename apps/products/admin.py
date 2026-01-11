@@ -2,7 +2,9 @@
 Admin configuration for products app.
 """
 from django.contrib import admin
-from apps.products.models import Category, Product, ProductVariant, ProductImage, ProductReview
+from apps.products.models import Category, Product, ProductVariant, ProductImage
+# ProductReview temporarily removed - will be added after migrations
+# from apps.products.models.review import ProductReview
 
 
 @admin.register(Category)
@@ -75,12 +77,13 @@ class ProductImageAdmin(admin.ModelAdmin):
     raw_id_fields = ['product']
 
 
-@admin.register(ProductReview)
-class ProductReviewAdmin(admin.ModelAdmin):
-    list_display = [
-        'product', 'customer', 'rating', 'is_verified_purchase',
-        'is_approved', 'is_featured', 'created_at'
-    ]
-    list_filter = ['rating', 'is_verified_purchase', 'is_approved', 'is_featured']
-    search_fields = ['product__name', 'customer__user__email', 'title']
-    raw_id_fields = ['product', 'customer', 'order', 'approved_by']
+# ProductReview admin temporarily removed - will be added after migrations
+# @admin.register(ProductReview)
+# class ProductReviewAdmin(admin.ModelAdmin):
+#     list_display = [
+#         'product', 'customer', 'rating', 'is_verified_purchase',
+#         'is_approved', 'is_featured', 'created_at'
+#     ]
+#     list_filter = ['rating', 'is_verified_purchase', 'is_approved', 'is_featured']
+#     search_fields = ['product__name', 'customer__user__email', 'title']
+#     raw_id_fields = ['product', 'customer', 'order', 'approved_by']
